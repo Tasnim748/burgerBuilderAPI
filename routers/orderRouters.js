@@ -14,7 +14,8 @@ const newOrder = async (req, res) => {
 }
 
 const orderList = async (req, res) => {
-    const orders = await Order.find({'customer.email': req.query.userEmail})
+    const param = decodeURI(req.query.userEmail)
+    const orders = await Order.find({'customer.email': param})
         .sort({orderTime: -1});
     return res.send(orders);
 }
