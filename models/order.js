@@ -8,6 +8,7 @@ const orderSchema = Schema({
     }],
     customer: {
         email: String,
+        userName: String,
         deliveryAddress: String,
         phone: String,
         paymentType: String
